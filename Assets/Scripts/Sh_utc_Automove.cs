@@ -2,15 +2,16 @@
 using System.Collections;
 
 public class Sh_utc_Automove : MonoBehaviour {
-    public Rigidbody rb;
+    private Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-        rb.velocity = new Vector3(0,0,5);
+	void Update () {
+        //rb.velocity = new Vector3(0,0,5);
+        transform.position = transform.position + new Vector3(0, 0, 5 * Time.deltaTime);
     }
 }
