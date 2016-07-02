@@ -5,7 +5,7 @@ public class Sh_For_Start : MonoBehaviour {
 
     public void SceneLoad()
     {
-        Application.LoadLevel("main");
+        Application.LoadLevel("Proto");
     }
     // Use this for initialization
     void Start () {

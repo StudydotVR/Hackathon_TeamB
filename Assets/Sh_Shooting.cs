@@ -10,7 +10,7 @@ public class Sh_Shooting : MonoBehaviour {
     private GameObject shotObj;
     
     private int layerMask;
-    private float camRayLength = 100;
+    private float camRayLength = 10000;
 
     // Use this for initialization
     void Start () {
@@ -50,7 +50,7 @@ public class Sh_Shooting : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(camRay, out hit, camRayLength))
         {
-            Vector3 shotVector = hit.point - transform.position;        //Playerから球を打つ目的地へのベクトル
+            Vector3 shotVector = hit.point - transform.position + transform.forward * 2;        //Playerから球を打つ目的地へのベクトル
             //transform.rotation = Quaternion.LookRotation(shotVector);   //Playerを目的地の角度へ回転させる
             
 
@@ -60,7 +60,7 @@ public class Sh_Shooting : MonoBehaviour {
                 //指定した弾をインスタンス化し，そのオブジェクトをshotに受け取る
                 GameObject shot = Instantiate(shotObj, transform.position + transform.forward * 2, Quaternion.LookRotation(transform.forward)) as GameObject;
                 //shotにつけられたRigidbodyを使ってAddForceで指定方向に飛ばす
-                shot.GetComponent<Rigidbody>().AddForce(shotVector * 200);
+                shot.GetComponent<Rigidbody>().AddForce(shotVector * 100);
             }
         }
 
