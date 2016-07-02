@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Sh_Fadeout : MonoBehaviour {
-
-    public void SceneLoad2()
+public class Sh＿GotoTitle : MonoBehaviour {
+    public void LoadScene3()
     {
-        FadeManager.Instance.LoadLevel("Proto", 2);
+        FadeManager.Instance.LoadLevel("Sh_Title", 2);
     }
+
 	// Use this for initialization
 	void Start () {
 	
@@ -16,5 +16,4 @@ public class Sh_Fadeout : MonoBehaviour {
 	void Update () {
 	
 	}
-
 }

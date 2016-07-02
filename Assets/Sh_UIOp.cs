@@ -6,23 +6,28 @@ public class Sh_UIOp : MonoBehaviour {
     public AudioClip SERelord;
     AudioSource SERelordSource;
     public Animator anime;
+
     int i = 3;
+
     public Text counttext;
-    
-    
-    private int count;
-	// Use this for initialization
-	void Start () {
-        count = count + 100;
-        SetCountText();
+    public int count;
+
+    public Text timetext;
+    float timer = 10;
+
+    // Use this for initialization
+    void Start () {
+
         SERelordSource = gameObject.GetComponent<AudioSource>();
         SERelordSource.clip = SERelord;
-        
+        SetCountText();
+
     }
 	
 	// Update is called once per frame
 	void Update () {
         //if(Input.GetMouseButtonDown(1) && (!anime.GetBool("BulletChange"))&& (!anime.GetBool("BulletChange1")) && (!anime.GetBool("BulletChange2")))
+        //timetext = gameObject.GetComponent<Text>();
         if (Input.GetMouseButtonDown(1))
         {
             anime.SetBool("BulletChange1", false);
@@ -72,14 +77,27 @@ public class Sh_UIOp : MonoBehaviour {
         /*anime.SetBool("BulletChange1", false);
         anime.SetBool("BulletChange2", false);
         anime.SetBool("BulletChange", false);*/
-        if(Input.GetKeyDown(KeyCode.E))
+
+        timer -= Time.deltaTime;
+        timetext.text = "TIME:" + string.Format("{0:f2}\r", timer); //少数以下２桁まで表示
+
+        if (Input.GetKeyDown(KeyCode.E))
         {
             count = count + 100;
             SetCountText();
+        }
+        if(timer < 0)
+        {
+            SceneLoad2();
         }
     }
     void SetCountText()
     {
         counttext.text = "SCORE : " + count.ToString();
+    }
+   
+    public void SceneLoad2()
+    {
+        FadeManager.Instance.LoadLevel("Sh_End", 2);
     }
 }
