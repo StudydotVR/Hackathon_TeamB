@@ -3,6 +3,10 @@ using System.Collections;
 
 public class Sh_Shooting : MonoBehaviour {
     private int i =3;
+
+    public AudioClip SEShot;
+    AudioSource SEShotSource;
+
     public GameObject shotObj1;//Cl
     public GameObject shotObj2;//SO4
     public GameObject shotObj3;//S
@@ -16,6 +20,8 @@ public class Sh_Shooting : MonoBehaviour {
     void Start () {
         //layerMask = LayerMask.GetMask("Target");
         shotObj = shotObj3;
+        SEShotSource = gameObject.GetComponent<AudioSource>();
+        SEShotSource.clip = SEShot;
     }
 	
 	// Update is called once per frame
@@ -23,7 +29,6 @@ public class Sh_Shooting : MonoBehaviour {
         if(Input.GetMouseButtonDown(1))
         {
             i++;
-
             if(i >= 3)
             {
                 i = 0;
@@ -61,6 +66,7 @@ public class Sh_Shooting : MonoBehaviour {
                 GameObject shot = Instantiate(shotObj, transform.position + transform.forward * 2, Quaternion.LookRotation(transform.forward)) as GameObject;
                 //shotにつけられたRigidbodyを使ってAddForceで指定方向に飛ばす
                 shot.GetComponent<Rigidbody>().AddForce(shotVector * 100);
+                SEShotSource.PlayOneShot(SEShot);
             }
         }
 

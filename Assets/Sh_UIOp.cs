@@ -1,14 +1,24 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Sh_UIOp : MonoBehaviour {
+    public AudioClip SERelord;
+    AudioSource SERelordSource;
     public Animator anime;
     int i = 3;
-
+    public Text counttext;
+    
+    
+    private int count;
 	// Use this for initialization
 	void Start () {
+        count = count + 100;
+        SetCountText();
+        SERelordSource = gameObject.GetComponent<AudioSource>();
+        SERelordSource.clip = SERelord;
         
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -18,6 +28,7 @@ public class Sh_UIOp : MonoBehaviour {
             anime.SetBool("BulletChange1", false);
             anime.SetBool("BulletChange2", false);
             anime.SetBool("BulletChange", false);
+            SERelordSource.PlayOneShot(SERelord);
 
             i++;
 
@@ -61,5 +72,14 @@ public class Sh_UIOp : MonoBehaviour {
         /*anime.SetBool("BulletChange1", false);
         anime.SetBool("BulletChange2", false);
         anime.SetBool("BulletChange", false);*/
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            count = count + 100;
+            SetCountText();
+        }
+    }
+    void SetCountText()
+    {
+        counttext.text = "SCORE : " + count.ToString();
     }
 }
