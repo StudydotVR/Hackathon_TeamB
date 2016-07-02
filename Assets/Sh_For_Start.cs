@@ -5,7 +5,8 @@ public class Sh_For_Start : MonoBehaviour {
 
     public void SceneLoad()
     {
-        Application.LoadLevel("Proto");
+
+        FadeManager.Instance.LoadLevel("Proto", 2);
     }
     // Use this for initialization
     void Start () {
