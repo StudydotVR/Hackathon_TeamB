@@ -2,23 +2,47 @@
 using System.Collections;
 
 public class Sh_Shooting : MonoBehaviour {
-
-    public GameObject shotObj1;
-    public GameObject shotObj2;
-    public GameObject shotObj3;
+    private int i =3;
+    public GameObject shotObj1;//Cl
+    public GameObject shotObj2;//SO4
+    public GameObject shotObj3;//S
 
     private GameObject shotObj;
-
-
+    
+    private int layerMask;
     private float camRayLength = 100;
 
     // Use this for initialization
     void Start () {
-	
-	}
+        //layerMask = LayerMask.GetMask("Target");
+        shotObj = shotObj3;
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        if(Input.GetMouseButtonDown(1))
+        {
+            i++;
+
+            if(i >= 3)
+            {
+                i = 0;
+            }
+            if (i % 3 == 0)
+            {
+                shotObj = shotObj1;
+            }
+            if (i % 3 == 1)
+            {
+                shotObj = shotObj2;
+            }
+            if (i % 3 == 2)
+            {
+                shotObj = shotObj3;
+            }
+
+
+        }
 
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(camRay.origin, camRay.direction * 50, Color.yellow);  //実行時SceneにRayを描画する
