@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Sh_For_Start : MonoBehaviour {
+public class Sh_Fadeout : MonoBehaviour {
 
-    public void SceneLoad()
+    public void SceneLoad2()
     {
-
         FadeManager.Instance.LoadLevel("Proto", 2);
     }
-    // Use this for initialization
-    void Start () {
+	// Use this for initialization
+	void Start () {
 	
 	}
 	
@@ -17,4 +16,5 @@ public class Sh_For_Start : MonoBehaviour {
 	void Update () {
 	
 	}
+
 }
