@@ -16,7 +16,7 @@ public class Sh_UIOp : MonoBehaviour {
 
     public Text timetext;
     public float timer = 10;
-    
+
 
     // Use this for initialization
     void Start () {
@@ -26,7 +26,7 @@ public class Sh_UIOp : MonoBehaviour {
         SetCountText();
 
     }
-	
+
 	// Update is called once per frame
 	void Update () {
         //if(Input.GetMouseButtonDown(1) && (!anime.GetBool("BulletChange"))&& (!anime.GetBool("BulletChange1")) && (!anime.GetBool("BulletChange2")))
@@ -64,7 +64,7 @@ public class Sh_UIOp : MonoBehaviour {
                 {
                     anime.SetBool("BulletChange1", false);
                 }*/
-             
+
 
             }
 
@@ -73,9 +73,9 @@ public class Sh_UIOp : MonoBehaviour {
                 anime.SetBool("BulletChange", false);
                 anime.SetBool("BulletChange1", false);
                 anime.SetBool("BulletChange2", true);
-                
+
             }
-        
+
         }
         /*anime.SetBool("BulletChange1", false);
         anime.SetBool("BulletChange2", false);
@@ -91,16 +91,16 @@ public class Sh_UIOp : MonoBehaviour {
         }
         if(timer < 0)
         {
-            
+
             SceneLoad2();
-            
+
         }
     }
-    void SetCountText()
+    public void SetCountText()
     {
         counttext.text = "SCORE : " + count.ToString();
     }
-   
+
     public void SceneLoad2()
     {
         FadeManager.Instance.LoadLevel("Sh_End", 1);

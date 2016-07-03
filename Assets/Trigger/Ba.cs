@@ -23,6 +23,7 @@ public class Ba : MonoBehaviour {
 		hitPos = other.ClosestPointOnBounds(this.transform.position);
 
 		if(other.tag == "SO") {
+			Sh_UIOp.count += 100;
 			GameObject before = GameObject.Find("Ba");
 			before.SetActiveRecursively(false);
 
@@ -33,7 +34,11 @@ public class Ba : MonoBehaviour {
 			GetComponent<Rigidbody>().velocity = Vector3.down * speed;
 
 			Instantiate(Spark, transform.position, transform.rotation);
-		} else {
+		} else if(other.tag == "Cl") {
+			Sh_UIOp.count -= 100;
+			Instantiate(RedSpark, hitPos, transform.rotation);
+		} else if(other.tag == "S"){
+			Sh_UIOp.count -= 100;
 			Instantiate(RedSpark, hitPos, transform.rotation);
 		}
 	}

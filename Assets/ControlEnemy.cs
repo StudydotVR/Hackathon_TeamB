@@ -26,7 +26,7 @@ public class ControlEnemy : MonoBehaviour {
 		// 初期化
 		count = 0;
 		currentTime = 0.0f;
-		apperTime = Random.Range(1.5f, 2f);
+		apperTime = Random.Range(1.0f, 1.5f);
 
 		maxX = -25f;
 		minX = 25f;

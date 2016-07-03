@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class fish : MonoBehaviour {
+public class fish2 : MonoBehaviour {
 
 	private float speed;
 	private Vector3 destination;
@@ -39,7 +39,7 @@ public class fish : MonoBehaviour {
 	}
 
 	public Vector3 GetRandomDestination() {
-		return destination = new Vector3(Random.Range(50f, 70f), 4f, Random.Range(150f, 180f));
+		return destination = new Vector3(Random.Range(50f, 70f), -3f, Random.Range(150f, 180f));
 		//return destination = new Vector3(Random.Range(25f, 30f), 3f, Random.Range(-10f, 10f));
 	}
 }
