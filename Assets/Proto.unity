@@ -362,6 +362,7 @@ GameObject:
   - 222: {fileID: 456825656}
   - 82: {fileID: 456825657}
   - 114: {fileID: 456825658}
+  - 114: {fileID: 456825659}
   m_Layer: 2
   m_Name: Canvas
   m_TagString: Untagged
@@ -464,7 +465,10 @@ MonoBehaviour:
   SERelord: {fileID: 8300000, guid: 9fa8455f669374c4d9d46aa61c13639d, type: 3}
   anime: {fileID: 456825655}
   counttext: {fileID: 38926334}
+  count: 0
   timetext: {fileID: 955446412}
+  timer: 10
+  TimerZERO: 1
 --- !u!95 &456825655
 Animator:
   serializedVersion: 3
@@ -568,11 +572,26 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 456825649}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7924c928d5f353a479e41443e275156e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &456825659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 456825649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed70af7998d77814ea6feaed11ca8260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: ab1458d95dade8f45a0a901165fea66b, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 32, y: 32}
+  K: {fileID: 456825649}
 --- !u!1 &587502108
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +864,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3a097273fec084b8c044d0f05929d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
   timer: 60
 --- !u!1 &1006427422
 GameObject:
@@ -942,7 +960,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1006427422}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6579b99f77068d34b8058144c204c195, type: 3}
   m_Name: 
@@ -2229,7 +2247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1999e02a82006fc4e8d67747dfc41601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
 --- !u!114 &1834683892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2249,13 +2266,6 @@ MonoBehaviour:
   backwardSpeed: 2
   rotateSpeed: 2
   jumpPower: 3
-  col: {fileID: 0}
-  rb: {fileID: 0}
-  velocity: {x: 0, y: 0, z: 0}
-  orgColHight: 0
-  orgVectColCenter: {x: 0, y: 0, z: 0}
-  anim: {fileID: 0}
-  cameraObject: {fileID: 0}
 --- !u!54 &1834683893
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2298,12 +2308,14 @@ MonoBehaviour:
   dynamicRatio: 1
   stiffnessForce: 0
   stiffnessCurve:
+    serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   dragForce: 0
   dragCurve:
+    serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -2320,15 +2332,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e72ee260999cbf64ca067e0afe04f1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i: 3
   SEShot: {fileID: 8300000, guid: cfc8def87eea5474385cbbf38d32c9a7, type: 3}
-  SEShotSource: {fileID: 0}
   shotObj1: {fileID: 164416, guid: c563acf17e709e44ba46ceb495d0e54d, type: 2}
   shotObj2: {fileID: 164416, guid: 569d3a0e12ac7ae42943922ac6b6f6a5, type: 2}
   shotObj3: {fileID: 164416, guid: ac3871f86930c3d46bef7aef2dd7c0be, type: 2}
-  shotObj: {fileID: 0}
-  layerMask: 0
-  camRayLength: 10000
 --- !u!4 &1834683903 stripped
 Transform:
   m_PrefabParentObject: {fileID: 403870, guid: 7e0f7737a40453040a6beb5f9d8a599b, type: 2}

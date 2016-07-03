@@ -2,9 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class Sh_SCOREBOX : MonoBehaviour {
-    public Text Score;
-    public int score;
+public class Sh_ForSCORE : MonoBehaviour {
+    public 
 	// Use this for initialization
 	void Start () {
 	
@@ -12,11 +11,6 @@ public class Sh_SCOREBOX : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        score = Score.count;
-
-    }
-    void SCCORE()
-    {
-
-    }
+	
+	}
 }

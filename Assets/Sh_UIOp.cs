@@ -11,9 +11,11 @@ public class Sh_UIOp : MonoBehaviour {
 
     public Text counttext;
     public int count;
-
+    public static int SCORE; 
+    
     public Text timetext;
-    float timer = 10;
+    public float timer = 10;
+    
 
     // Use this for initialization
     void Start () {
@@ -84,11 +86,14 @@ public class Sh_UIOp : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E))
         {
             count = count + 100;
+            SCORE = count;
             SetCountText();
         }
         if(timer < 0)
         {
+            
             SceneLoad2();
+            
         }
     }
     void SetCountText()
@@ -98,6 +103,6 @@ public class Sh_UIOp : MonoBehaviour {
    
     public void SceneLoad2()
     {
-        FadeManager.Instance.LoadLevel("Sh_End", 2);
+        FadeManager.Instance.LoadLevel("Sh_End", 1);
     }
 }
