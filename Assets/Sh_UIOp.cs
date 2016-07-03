@@ -10,9 +10,10 @@ public class Sh_UIOp : MonoBehaviour {
     int i = 3;
 
     public Text counttext;
-    public int count;
-    public static int SCORE; 
-    
+    public static int count;
+    //public static Sh_UIOp Instance = new Sh_UIOp();
+
+
     public Text timetext;
     public float timer = 10;
     
@@ -86,7 +87,6 @@ public class Sh_UIOp : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E))
         {
             count = count + 100;
-            SCORE = count;
             SetCountText();
         }
         if(timer < 0)

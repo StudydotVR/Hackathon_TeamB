@@ -914,6 +914,7 @@ GameObject:
   - 224: {fileID: 923177617}
   - 222: {fileID: 923177619}
   - 114: {fileID: 923177618}
+  - 114: {fileID: 923177620}
   m_Layer: 5
   m_Name: SCORE
   m_TagString: Untagged
@@ -937,7 +938,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 232, y: -50}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &923177618
 MonoBehaviour:
@@ -969,15 +970,29 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'SCORE :'
+  m_Text: SCORE :XXX
 --- !u!222 &923177619
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 923177616}
+--- !u!114 &923177620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923177616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6310c07411daf274995085cc9df69934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scorename: 0
+  XX: {fileID: 0}
+  TETE: {fileID: 923177618}
 --- !u!1 &1169825586
 GameObject:
   m_ObjectHideFlags: 0
