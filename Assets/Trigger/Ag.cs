@@ -10,7 +10,7 @@ public class Ag : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = 16;
+		speed = 30;
 
 	}
 

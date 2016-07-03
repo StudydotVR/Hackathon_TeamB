@@ -10,7 +10,7 @@ public class Fe : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = 16;
+		speed = 30;
 	}
 
 	// Update is called once per frame

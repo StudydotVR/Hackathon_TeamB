@@ -10,7 +10,7 @@ public class Zn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = 16;
+		speed = 30;
 
 	}
 
@@ -21,7 +21,7 @@ public class Zn : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		hitPos = other.ClosestPointOnBounds(this.transform.position);
-		
+
 		if(other.tag == "S") {
 			GameObject before = GameObject.Find("Zn");
 			before.SetActiveRecursively(false);

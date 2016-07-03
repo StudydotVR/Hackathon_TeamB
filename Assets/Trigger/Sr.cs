@@ -10,7 +10,7 @@ public class Sr : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = 16;
+		speed = 30;
 
 	}
 
@@ -21,7 +21,7 @@ public class Sr : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		hitPos = other.ClosestPointOnBounds(this.transform.position);
-		
+
 		if(other.tag == "SO") {
 			GameObject before = GameObject.Find("Sr");
 			before.SetActiveRecursively(false);
