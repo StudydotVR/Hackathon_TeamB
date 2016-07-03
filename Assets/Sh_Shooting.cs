@@ -7,8 +7,10 @@ public class Sh_Shooting : MonoBehaviour {
     public GameObject shotObj2;//SO4
     public GameObject shotObj3;//S
 
+    public int speed;
+
     private GameObject shotObj;
-    
+
     private int layerMask;
     private float camRayLength = 100;
 
@@ -17,7 +19,7 @@ public class Sh_Shooting : MonoBehaviour {
         //layerMask = LayerMask.GetMask("Target");
         shotObj = shotObj3;
     }
-	
+
 	// Update is called once per frame
 	void Update () {
         if(Input.GetMouseButtonDown(1))
@@ -52,7 +54,7 @@ public class Sh_Shooting : MonoBehaviour {
         {
             Vector3 shotVector = hit.point - transform.position;        //Playerから球を打つ目的地へのベクトル
             //transform.rotation = Quaternion.LookRotation(shotVector);   //Playerを目的地の角度へ回転させる
-            
+
 
             if (Input.GetMouseButtonDown(0))
             //if (Input.GetKeyDown(KeyCode.Space))
@@ -60,7 +62,7 @@ public class Sh_Shooting : MonoBehaviour {
                 //指定した弾をインスタンス化し，そのオブジェクトをshotに受け取る
                 GameObject shot = Instantiate(shotObj, transform.position + transform.forward * 2, Quaternion.LookRotation(transform.forward)) as GameObject;
                 //shotにつけられたRigidbodyを使ってAddForceで指定方向に飛ばす
-                shot.GetComponent<Rigidbody>().AddForce(shotVector * 200);
+                shot.GetComponent<Rigidbody>().AddForce(shotVector * speed);
             }
         }
 

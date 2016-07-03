@@ -44,9 +44,9 @@ public class enemyMotion : MonoBehaviour {
 			}
 		}
 
-		if(currentTime > 8f) {
+		if(currentTime > 20f) {
 			Destroy(this.gameObject);
 		}
-
 	}
+
 }

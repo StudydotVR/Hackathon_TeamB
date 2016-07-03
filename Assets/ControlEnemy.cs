@@ -3,14 +3,13 @@ using System.Collections;
 
 public class ControlEnemy : MonoBehaviour {
 
-  private GameObject Enemy1;
-	private GameObject Enemy2;
-	private GameObject Enemy3;
-	private GameObject Enemy4;
+  //private GameObject Enemy1;
+	//private GameObject Enemy2;
+	//private GameObject Enemy3;
+	//private GameObject Enemy4;
 
 	public GameObject[] enemies;   // 敵の種類のリスト
 	public int count;
-	public int maxEnemy;  // Sceneに現れる敵の最大数
 
 	public float apperTime;  // 敵が出現する時間の間隔
 	private float currentTime;  // 前の敵が現れてからの時間を計る
@@ -26,8 +25,6 @@ public class ControlEnemy : MonoBehaviour {
 	void Start () {
 		// 初期化
 		count = 0;
-		maxEnemy = 8;
-
 		currentTime = 0.0f;
 		apperTime = Random.Range(1.5f, 2f);
 
@@ -44,7 +41,6 @@ public class ControlEnemy : MonoBehaviour {
 		if(currentTime > apperTime) {
 			Appear();
 		}
-
 	}
 
 	void Appear() {
@@ -56,7 +52,8 @@ public class ControlEnemy : MonoBehaviour {
 		float RYPositon = Random.Range(maxY, minY);
 		Vector3 RPosition = new Vector3(RXPosition, RYPositon, transform.position.z);
 
-		GameObject a = Instantiate(enemies[typeOfEnemy], RPosition, Quaternion.identity) as GameObject;
+		Instantiate(enemies[typeOfEnemy], RPosition, Quaternion.identity);
+    //GameObject a = Instantiate(enemies[typeOfEnemy], RPosition, Quaternion.identity) as GameObject;
 		currentTime = 0.0f;
 	}
 }

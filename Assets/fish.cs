@@ -39,7 +39,7 @@ public class fish : MonoBehaviour {
 	}
 
 	public Vector3 GetRandomDestination() {
-		return destination = new Vector3(Random.Range(40f, 70f), 3f, Random.Range(-13f, 10f));
+		return destination = new Vector3(Random.Range(40f, 70f), 4f, Random.Range(150f, 180f));
 		//return destination = new Vector3(Random.Range(25f, 30f), 3f, Random.Range(-10f, 10f));
 	}
 }
