@@ -1,0 +1,43 @@
+CSS
+
+*{
+	margin:0px;
+	padding:0px;
+}
+
+body {background: blue url("image/sea.png");
+    margin: 0px;
+	padding: 0px;
+}
+
+.wrapper{
+			width:1024px;
+			height:auto;
+			margin-right:auto;
+			margin-left:auto;
+}
+			
+    .box1{
+      background: #00ffff;
+      width:1024px;
+      height:auto;
+    }
+    .box2{
+      background: #00FF00;
+      width:1024px;
+      height:auto;
+    }
+    .box3{
+      background: #FFFF00;
+      width:1024px;
+      height:auto;
+    }
+
+	.top_rogo{
+		width:1024px;
+		height:auto;
+		}
+		
+		.foot{text-align:center; 
+		color:#FFFFFF;}
+		
